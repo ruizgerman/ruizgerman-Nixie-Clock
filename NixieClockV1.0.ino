@@ -528,10 +528,10 @@ void cambioHora() {
       readDS3231time(&RTCsecond, &RTCminute, &RTChour, &RTCdayOfWeek, &RTCdayOfMonth, &RTCmonth, &RTCyear);
 
       if (RTCminute < 59) {
-        RTCminute = 59; //=================================================RTCminute++;
+        RTCminute++;
       } else RTCminute = 0;
 
-      RTCsecond = 53; //=======================================================RTCsecond = 0;
+      RTCsecond = 0;
 
       // DS3231 (seconds, minutes, hours, day, date, month, year)
       setDS3231time(RTCsecond, RTCminute, RTChour, RTCdayOfWeek, RTCdayOfMonth, RTCmonth, RTCyear);
